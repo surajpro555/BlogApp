@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+<center>
+<div class="form-box">
+    <form action="sign" method="post"  class="form">
+        <span class="title">Sign up</span>
+        <div class="form-container">
+            <input type="text" class="input" name="username" placeholder="Username" required>
+            <input type="email" class="input" name="email" placeholder="Email" required>
+            <input type="password" class="input"  name="password" placeholder="Password" required>
+            <input type="password" class="input" name="confirmpassword" placeholder="Confirm Password" required>
+        </div>
+        <button type="submit">Sign up</button>
+    </form>
+    <div class="form-section">
+        <p>Not have an account? <a href="/login">Log in</a> </p>
+    </div>
+</div>
+</center>
+
+<%- include('partials/footer') %>

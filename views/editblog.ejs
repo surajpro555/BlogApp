@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Update Blog</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    h2 {
+      margin-top: 50px;  
+      color: #333;
+      text-align: center;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"],
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    .form-group textarea {
+      height: 150px;
+    }
+
+    .form-group input[type="file"] {
+      margin-top: 5px;
+    }
+
+    .btn-container {
+      text-align: center;
+    }
+
+    .btn-container button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-container button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    @media (max-width: 600px) {
+      form {
+        padding: 20px;
+      }
+
+      .form-group label {
+        font-size: 16px;
+      }
+
+      .form-group input[type="text"],
+      .form-group textarea {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Update The Blog Post</h2>
+  <form action="/editblog/<%= data %>" method="POST">
+    <div class="form-group">
+      <label for="title">Updated Title:</label>
+      <input type="text" id="title" name="title" required>
+    </div>
+
+    <div class="form-group">
+      <label for="content">Updated Content:</label>
+      <textarea id="content" name="body" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="image">Upload Image:</label>
+      <input type="file" id="image" name="coverImageUrl" accept="image/*">
+    </div>
+
+    <div class="btn-container">
+      <button type="submit">Update</button>
+    </div>
+  </form>
+</body>
+</html>
