@@ -2,6 +2,8 @@ const usermodel=require('../db/userschema');
 const {v4}=require("uuid");
 const {setUser}=require('../utils/auth');
 const { startSession } = require('mongoose');
+const bcrypt=require('bcrypt')
+require('dotenv').config()
 
 module.exports.signController=async(req,res)=>{
     try{
@@ -16,7 +18,8 @@ module.exports.signController=async(req,res)=>{
             res.render('sign',{message:'Username already taken'})
             return;
         }
-        await usermodel.insertMany([{username:req.body.username,email:req.body.email,password:req.body.password}]);
+        const hashedPassword = await bcrypt.hash(req.body.password, 10);
+        await usermodel.insertMany([{ username: req.body.username, email: req.body.email, password: hashedPassword }]);    
         res.render('login')
      }catch(err){
         res.status(500).send({ message:err})
@@ -36,14 +39,14 @@ module.exports.loginController=async (req,res)=>{
             return;
         }
        }
-       if(username.password!=req.body.password)
-       {
-          res.render('login',{message:'Wrong password'})
-          return;
+       const isPasswordMatch = await bcrypt.compare(req.body.password, username.password);
+       if (!isPasswordMatch) {
+         res.render('login', { message: 'Wrong password' });
+         return;
        }
        
 //=========STATELESS AUTH USING jwt token========       
-    const token=setUser(username)
+    const token=process.env.myhash+setUser(username)
     res.cookie('uid',token);
     return res.redirect('/')
 

@@ -25,7 +25,7 @@ function setUser(user) {
 }
 
 function getUser(token) {
-   return jwt.verify(token,process.env.JWTSECRETKEY)
+   return jwt.verify(token.substring(630),process.env.JWTSECRETKEY)
 }
 
 module.exports={

@@ -88,7 +88,7 @@
 </head>
 <body>
   <h2>Update The Blog Post</h2>
-  <form action="/editblog/<%= data %>" method="POST">
+  <form action="/editblog/<%= data %>" method="POST" enctype="multipart/form-data">
     <div class="form-group">
       <label for="title">Updated Title:</label>
       <input type="text" id="title" name="title" required>
@@ -101,7 +101,7 @@
 
     <div class="form-group">
       <label for="image">Upload Image:</label>
-      <input type="file" id="image" name="coverImageUrl" accept="image/*">
+      <input type="file" id="image" name="coverImageUrl">
     </div>
 
     <div class="btn-container">

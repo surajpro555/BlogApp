@@ -38,7 +38,7 @@ h5 {
 a {
   letter-spacing: 2px;
   text-decoration: none;
-  color: #71c55d;
+  color: #292d28;
 }
 
 a:hover {
@@ -108,7 +108,7 @@ span {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #71c55d;
+  background: #292e27;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -122,7 +122,7 @@ span {
 }
 
 .back-to-top:hover {
-  background: #8bd07b;
+  background: #dfa354;
   color: #fff;
 }
 
@@ -156,7 +156,7 @@ span {
 }
 
 #header #logo h1 a span {
-  color: #71c55d;
+  color: #51adc6;
 }
 
 #header #logo img {
@@ -213,7 +213,7 @@ span {
 
 .navbar a:hover,
 .navbar li:hover>a {
-  color: #71c55d;
+  color: #5dbec5;
 }
 
 
@@ -284,7 +284,7 @@ span {
 
 .navbar-mobile a:hover,
 .navbar-mobile li:hover>a {
-  color: #71c55d;
+  color: #5dc5c5;
 }
 
 .navbar-mobile .getstarted,
@@ -340,7 +340,7 @@ span {
   font-weight: 700;
   line-height: 56px;
   font-family: "Philosopher", sans-serif;
-  color: #71c55d;
+  color: #5dc3c5;
 }
 
 @media (max-width: 768px) {
@@ -380,17 +380,17 @@ span {
   letter-spacing: 1px;
   display: inline-block;
   padding: 11px 36px;
-  border-radius: 50px;
+  border-radius: 5px;
   transition: 0.5s;
   margin-top: 15px;
-  border: 2px solid #71c55d;
-  background: #fff;
-  color: #71c55d;
+  border: 2px solid #5dbec5;
+  background: #ffffff;
+  color: #0a0b0f;
   text-decoration: none;
 }
 
 #hero .btn-get-started:hover {
-  background: #71c55d;
+  background: #348aac;
   color: #fff;
 }
 
@@ -411,7 +411,7 @@ span {
 }
 
 #hero .btns a:hover {
-  color: #71c55d;
+  color: #5dbec5;
 }
 
 /*--------------------------------------------------------------
@@ -501,7 +501,7 @@ section {
 }
 
 #blog .block-blog .content-blog h4 a:hover {
-  color: #71c55d;
+  color: #5dbbc5;
 }
 
 #blog .block-blog .content-blog>span {
@@ -520,7 +520,7 @@ section {
 }
 
 #blog .block-blog .content-blog a.readmore:hover {
-  color: #71c55d;
+  color: #5dc2c5;
 }
 
 /*--------------------------------------------------------------
@@ -617,6 +617,15 @@ section {
 
 .form button:hover {
   background-color: #005ce6;
+}
+
+@media screen and (max-width: 600px) {
+  .form-box {
+    margin-top: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
+    max-width: 100%;
+}
 }
 
 *-------------------------------------------------------------- CARD --------------------------------------------------------------*/ 

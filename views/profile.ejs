@@ -35,6 +35,7 @@
 
     .button-container {
       margin-top: 20px;
+      margin-bottom: 30px;
       display: flex;
       gap: 10px;
     }
@@ -102,6 +103,8 @@
     }
 
     .card-text {
+      display: flex;
+      justify-content: left;
       color: #555;
     }
 
@@ -153,12 +156,14 @@
 <body>
   <div class="container">
     <img class="profile-image" src="img/user-image.png" alt="Profile Image">
+
+    <button style="width: 20%; margin-top: 20px;" class="button">Username:<%= loguser.username  %></button>
+    <button style="width: 20%; margin-top: 20px;" class="button">Email:<%= loguser.email  %></button>
     <div class="button-container">
-      <button class="button">Total Like:0</button>
-      <button class="button">Total Dislike:0</button>
       <a href="/logout"><button style="background-color: red;" class="button">LogOut</button></a>
       <a href="/"><button class="button">Home</button></a>
     </div>
+     <center><h2>My Blogs</h2></center>
     <div class="card-container">
       <% data?.forEach(function(blog){ %>
         <div class="card">
@@ -170,22 +175,13 @@
             <div class="card-content">
               <h2 class="card-title">Title:<%= blog.title %>
               </h2>
-              <p class="card-text">Body:<%= blog.body %>
-              </p>
-              <p class="card-text">Like:<%= blog.like %>
-              </p>
-              <p class="card-text">Dislike:<%= blog.dislike %>
-              </p>
-              <p class="card-text">CreatedBy:<%= blog.createdBy %>
-              </p>
+              <center><img style="
+                width: 100%;
+                height: 300px;
+                border-radius: 2%;
+                " src="<%= blog.coverImageUrl %>"></center>
+              <p class="card-text"></p>
               <p class="card-text">Date:<%= blog.date %>
-              </p>
-              <p class="card-text">Image:<%= blog.coverImageUrl %>
-              </p>
-            </div>
-            <div class="card-footer">
-              <button class="like-button">Like</button>
-              <button class="dislike-button">Dislike</button>
             </div>
         </div>
         <% }) %>
