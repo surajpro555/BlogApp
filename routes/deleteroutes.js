@@ -8,7 +8,7 @@ route.get('/:blogid', checkLogUser, async (req, res) => {
         await blogmodel.findByIdAndDelete(req.params.blogid);
         res.redirect('/profile')
     } catch (error) {
-        res.render('/profile')
+        res.render('home')
         console.log(error);
     }
 });

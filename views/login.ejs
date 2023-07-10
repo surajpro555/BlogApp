@@ -2,7 +2,10 @@
 
 <center>
 <div class="form-box">
-    <form action="login" method="post" class="form">
+    <form action="/login" method="post" class="form">
+        <% if (message) { %>
+          <center><span class="title" style="color: red;"> <%= message %></span></center>
+        <% } %>
         <span class="title">Log In</span>
         <div class="form-container">
             <input type="text" class="input" name="EmailUsername" placeholder="Email or Username" required>

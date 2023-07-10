@@ -32,8 +32,8 @@ app.use('/profile',profileroutes);
 
 app.get('/', (req, res) => res.render('home'));
 app.get('/about',(req,res)=>res.render('about'));
-app.get('/login', (req, res) => res.render('login'));
-app.get('/sign', (req, res) => res.render('sign'));
+app.get('/login', (req, res) => res.render('login',{message:null}));
+app.get('/sign', (req, res) => res.render('sign',{message:null}));
 app.get('/logout', (req, res) => res.clearCookie('uid').redirect('/login'));
 
 app.post('/sign', signController);

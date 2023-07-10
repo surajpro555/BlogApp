@@ -21,7 +21,7 @@ require('dotenv').config()
 
 function setUser(user) {
    const payload={...user}
-   return jwt.sign(payload,process.env.JWTSECRETKEY);
+   return jwt.sign(payload,process.env.JWTSECRETKEY,{ expiresIn:'2h'});
 }
 
 function getUser(token) {

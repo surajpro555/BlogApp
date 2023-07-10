@@ -6,14 +6,18 @@ const checkLogUser=async(req,res,next)=>{
     {
         return res.redirect('/login');
     }
-    const user=getUser(userid);
-    if(!user)
-    {
-        return res.redirect('/login');
+    try{
+        const user=getUser(userid);
+        if(!user)
+        {
+           return res.redirect('/login');
+        }
+        req.user=user;
+        // console.log(req.user);
+        next();
+    }catch{
+        return res.render('login',{ message:"Sesion expired,Login Again"});
     }
-    req.user=user;
-    // console.log(req.user);
-    next();
 }
 
 module.exports={

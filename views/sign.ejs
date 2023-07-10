@@ -2,7 +2,10 @@
 
 <center>
 <div class="form-box">
-    <form action="sign" method="post"  class="form">
+    <form action="/sign" method="post"  class="form">
+        <% if (message) { %>
+            <center><span class="title" style="color: red;"> <%= message %></span></center>
+          <% } %>
         <span class="title">Sign up</span>
         <div class="form-container">
             <input type="text" class="input" name="username" placeholder="Username" required>
